@@ -5,7 +5,8 @@ import com.starfish_studios.seasons_greetings.common.entity.GingerbreadMan;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 
@@ -37,7 +38,7 @@ public class GingerbreadManModel extends DefaultedEntityGeoModel<GingerbreadMan>
         super.setCustomAnimations(gingerbreadMan, instanceId, animationState);
         if (animationState == null) return;
 
-        GeoBone root = this.getAnimationProcessor().getBone("rootRot");
+        CoreGeoBone root = this.getAnimationProcessor().getBone("rootRot");
 
     }
 }

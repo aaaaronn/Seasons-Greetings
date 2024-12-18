@@ -6,13 +6,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
 
 public class ChristmasHatModel extends GeoModel<ChristmasHatItem> {
-
     @Override
     public ResourceLocation getModelResource(ChristmasHatItem enchantmentRobeItem) {
         return SeasonsGreetings.id("geo/armor/christmas_hat.geo.json");

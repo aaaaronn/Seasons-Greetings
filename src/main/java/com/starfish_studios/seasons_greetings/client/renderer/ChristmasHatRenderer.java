@@ -6,8 +6,8 @@ import com.starfish_studios.seasons_greetings.common.item.ChristmasHatItem;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.cache.object.GeoBone;
-import software.bernie.geckolib.renderer.specialty.DyeableGeoArmorRenderer;
-import software.bernie.geckolib.util.Color;
+import software.bernie.geckolib.renderer.DyeableGeoArmorRenderer;
+import software.bernie.geckolib.core.object.Color;
 
 public class ChristmasHatRenderer extends DyeableGeoArmorRenderer<ChristmasHatItem> {
 

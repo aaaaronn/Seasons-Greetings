@@ -30,13 +30,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.pathfinder.PathType;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Objects;
@@ -65,12 +65,12 @@ public class GingerbreadMan extends TamableAnimal implements GeoEntity, NeutralM
     public GingerbreadMan(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
 //        this.setCanPickUpLoot(true);
-        this.setTame(false, false);
-        this.setPathfindingMalus(PathType.POWDER_SNOW, -1.0F);
-        this.setPathfindingMalus(PathType.DANGER_POWDER_SNOW, -1.0F);
+        this.setTame(false);
+        this.setPathfindingMalus(BlockPathTypes.POWDER_SNOW, -1.0F);
+        this.setPathfindingMalus(BlockPathTypes.DANGER_POWDER_SNOW, -1.0F);
     }
 
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_REMAINING_ANGER_TIME, 0);
         builder.define(CANT_CATCH_ME, false);
@@ -178,7 +178,7 @@ public class GingerbreadMan extends TamableAnimal implements GeoEntity, NeutralM
                     this.navigation.stop();
                     this.setTarget(null);
                 }
-                return InteractionResult.SUCCESS_NO_ITEM_USED;
+                return InteractionResult.SUCCESS;
             }
         }
 
