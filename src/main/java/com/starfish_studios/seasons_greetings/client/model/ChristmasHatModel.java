@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.cache.object.GeoBone;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
 
@@ -33,8 +33,8 @@ public class ChristmasHatModel extends GeoModel<ChristmasHatItem> {
         super.setCustomAnimations(animatable, instanceId, animationState);
         if (animationState == null) return;
 
-        GeoBone hatTip = this.getAnimationProcessor().getBone("poof");
-        GeoBone hatBase = this.getAnimationProcessor().getBone("root");
+        CoreGeoBone hatTip = this.getAnimationProcessor().getBone("poof");
+        CoreGeoBone hatBase = this.getAnimationProcessor().getBone("root");
 
         Entity entity = animationState.getData(DataTickets.ENTITY);
 
